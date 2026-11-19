@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>LS Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Barra de abas -->
+  <div id="tabbar">
+    <div id="abas"></div>
+    <button id="btnNovaAba" title="Nova aba (Ctrl+T)">+</button>
+  </div>
+
+  <!-- Barra de endereço -->
+  <div id="toolbar">
+    <button id="btnVoltar"    title="Voltar (Alt+←)">←</button>
+    <button id="btnAvancar"   title="Avançar (Alt+→)">→</button>
+    <button id="btnRecarregar" title="Recarregar (Ctrl+R)">⟳</button>
+    <button id="btnHome"      title="Home">🏠</button>
+    <input id="endereco" type="text" placeholder="Digite uma URL (Ctrl+L)" />
+    <button id="btnDevtools"  title="DevTools da aba">🛠</button>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
