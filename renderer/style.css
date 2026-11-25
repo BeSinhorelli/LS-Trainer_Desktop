@@ -6,10 +6,9 @@
   --surface-2: #353548;
   --text: #e4e4f0;
   --muted: #9a9ab0;
-  --accent: #7c5cff;
   --border: #3a3a50;
-  --tab-h: 40px;
-  --toolbar-h: 48px;
+  /* Altura que deve bater com TOPBAR_HEIGHT no main.js */
+  --topbar-h: 40px; 
 }
 
 html, body {
@@ -21,139 +20,35 @@ html, body {
   user-select: none;
 }
 
-/* ══════════════ Abas ══════════════ */
-#tabbar {
-  height: var(--tab-h);
+/* Barra superior fina */
+#topbar {
+  height: var(--topbar-h);
   background: var(--surface);
-  display: flex;
-  align-items: stretch;
-  padding: 4px 4px 0;
-  gap: 4px;
-  -webkit-app-region: drag;
-}
-
-#abas {
-  display: flex;
-  flex: 1;
-  gap: 2px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-app-region: no-drag;
-}
-#abas::-webkit-scrollbar { height: 4px; }
-#abas::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-.aba {
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  background: var(--surface-2);
-  border-radius: 8px 8px 0 0;
-  cursor: pointer;
-  font-size: 0.8rem;
-  color: var(--muted);
-  min-width: 120px;
-  max-width: 220px;
-  flex-shrink: 0;
-  transition: background 0.15s;
-}
-.aba:hover { background: #40405a; }
-.aba.ativa {
-  background: var(--bg);
-  color: var(--text);
-  font-weight: 600;
+  justify-content: flex-end; /* Alinha o botão à direita */
+  padding: 0 16px;
+  -webkit-app-region: drag; /* Permite arrastar a janela */
 }
 
-.aba .favicon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-.aba .spinner {
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--accent);
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-  flex-shrink: 0;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.aba .titulo {
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.aba .fechar {
-  width: 18px;
-  height: 18px;
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.aba .fechar:hover { background: rgba(255,255,255,0.15); color: var(--text); }
-
-#btnNovaAba {
+#btnDevtools {
   width: 32px;
+  height: 32px;
   background: transparent;
   border: none;
   color: var(--muted);
-  font-size: 1.3rem;
-  cursor: pointer;
+  font-size: 1.1rem;
   border-radius: 6px;
-  -webkit-app-region: no-drag;
-}
-#btnNovaAba:hover { background: var(--surface-2); color: var(--text); }
-
-/* ══════════════ Toolbar ══════════════ */
-#toolbar {
-  height: var(--toolbar-h);
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 0 8px;
-}
-
-#toolbar button {
-  width: 34px;
-  height: 34px;
-  border: none;
-  background: transparent;
-  color: var(--text);
-  font-size: 1rem;
-  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-app-region: no-drag; /* Impede que o clique seja ignorado */
+  transition: background 0.15s, color 0.15s;
 }
-#toolbar button:hover { background: var(--surface-2); }
-#toolbar button:disabled { opacity: 0.35; cursor: not-allowed; }
 
-#endereco {
-  flex: 1;
-  height: 34px;
+#btnDevtools:hover {
   background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0 12px;
   color: var(--text);
-  font-size: 0.88rem;
-  outline: none;
-  user-select: text;
 }
-#endereco:focus { border-color: var(--accent); }
