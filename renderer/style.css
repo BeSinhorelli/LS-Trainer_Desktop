@@ -20,16 +20,16 @@ html, body {
   user-select: none;
 }
 
-/* Barra superior fina */
+/* renderer/style.css */
 #topbar {
   height: var(--topbar-h);
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Alinha o botão à direita */
+  justify-content: flex-end;
   padding: 0 16px;
-  -webkit-app-region: drag; /* Permite arrastar a janela */
+  -webkit-app-region: drag; /* ⚠️ IMPORTANTE: Permite arrastar a janela */
 }
 
 #btnDevtools {
